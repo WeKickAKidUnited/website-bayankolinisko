@@ -15,5 +15,5 @@ An advocacy website that tackles hygiene and sanitation for Malaya and Maparaan 
 - Vlog
 - Page
 
-# Author\
+# Author
 cambewildered
