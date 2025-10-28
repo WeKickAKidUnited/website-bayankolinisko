@@ -5,6 +5,7 @@ An advocacy website that tackles hygiene and sanitation for Malaya and Maparaan 
 
 ## Written
 - HTML & CSS
+- With some help from AI because I coded some of this in a single line and fixed some of the broken code.
 
 ## Things that don't work at the moment
 - None for now
