@@ -7,13 +7,14 @@ An advocacy website that tackles hygiene and sanitation for Malaya and Maparaan 
 - HTML & CSS
 
 ## Things that don't work at the moment
-- Embed YouTube Videos
+- None for now
 
 ## Working On
 - Poster
 - Podcast
 - Vlog
 - Page
+- Logo
 
 # Author
 cambewildered
