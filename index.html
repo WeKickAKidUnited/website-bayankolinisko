@@ -1,416 +1,518 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Bayan Ko, Linis Ko</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bayan Ko, Linis Ko</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
 
-  <style>
-    :root {
-      --bg: #fbfdff;
-      --card: #ffffff;
-      --muted: #6b7280;
-      --accent-blue: #3b82f6;
-      --accent-green: #16a34a;
-      --accent-contrast: #0f172a;
-      --radius: 14px;
-    }
+    <style>
+      :root {
+        --bg: #fbfdff;
+        --card: #ffffff;
+        --muted: #6b7280;
+        --accent-blue: #3b82f6;
+        --accent-green: #16a34a;
+        --accent-green-light: #4ade80;
+        --accent-contrast: #0f172a;
+        --radius: 14px;
+      }
 
-    * { box-sizing: border-box; }
-    html, body { height: 100%; }
+      * {
+        box-sizing: border-box;
+      }
 
-    body {
-      margin: 0;
-      font-family: Inter, system-ui, Arial;
-      background: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%);
-      color: var(--accent-contrast);
-      line-height: 1.5;
-    }
+      html,
+      body {
+        height: 100%;
+      }
 
-    .nav {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 18px 24px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 16px;
-    }
+      body {
+        margin: 0;
+        font-family: Inter, system-ui, Arial;
+        background: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%);
+        color: var(--accent-contrast);
+        line-height: 1.5;
+      }
 
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      text-decoration: none;
-      color: var(--accent-contrast);
-    }
+      .nav {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 18px 24px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 16px;
+      }
 
-    .logo {
-      width: 44px;
-      height: 44px;
-      border-radius: 10px;
-      background: linear-gradient(135deg, var(--accent-blue), var(--accent-green));
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      font-weight: 700;
-      font-size: 18px;
-      box-shadow: 0 6px 18px rgba(15,23,42,0.08);
-    }
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        text-decoration: none;
+        color: var(--accent-contrast);
+      }
 
-    .nav-links {
-      display: flex;
-      gap: 14px;
-      align-items: center;
-    }
+      .logo {
+        width: 44px;
+        height: 44px;
+        border-radius: 10px;
+        background: linear-gradient(135deg, var(--accent-blue), var(--accent-green));
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-weight: 700;
+        font-size: 18px;
+        box-shadow: 0 6px 18px rgba(15, 23, 42, 0.08);
+      }
 
-    .nav-links a {
-      text-decoration: none;
-      color: var(--accent-contrast);
-      padding: 8px 12px;
-      border-radius: 8px;
-      font-weight: 600;
-      font-size: 15px;
-    }
+      .nav-links {
+        display: flex;
+        gap: 14px;
+        align-items: center;
+      }
 
-    .nav-links a:hover {
-      background: rgba(15,23,42,0.04);
-    }
+      .nav-links a {
+        text-decoration: none;
+        color: var(--accent-contrast);
+        padding: 8px 12px;
+        border-radius: 8px;
+        font-weight: 600;
+        font-size: 15px;
+      }
 
-    .cta {
-      background: var(--accent-blue);
-      padding: 10px 14px;
-      border-radius: 10px;
-      font-size: 14px;
-      font-weight: 700;
-      text-decoration: none;
-      color: white;
-      box-shadow: 0 6px 18px rgba(59,130,246,0.18);
-    }
+      .cta {
+        background: var(--accent-blue);
+        padding: 10px 14px;
+        border-radius: 10px;
+        font-size: 14px;
+        font-weight: 700;
+        text-decoration: none;
+        color: white;
+        box-shadow: 0 6px 18px rgba(59, 130, 246, 0.18);
+      }
 
-    .hero {
-      max-width: 1100px;
-      margin: 28px auto;
-      padding: 28px;
-      display: flex;
-      align-items: center;
-    }
+      #home.hero {
+        width: 100vw;
+        max-width: 100vw;
+        margin: 0;
+        padding: 40px 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        border-radius: 0;
+        height: 420px;
+        background-image: url("Photos/advocacy/pexels-photo-12091690.jpeg");
+        background-size: cover;
+        background-position: center;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
 
-    .hero-card {
-      background: var(--card);
-      padding: 28px;
-      flex: 1;
-      border-radius: var(--radius);
-      box-shadow: 0 10px 30px rgba(2,6,23,0.06);
-    }
+      #home.hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.35);
+      }
 
-    .headline {
-      font-size: 34px;
-      margin: 0 0 12px;
-      font-weight: 800;
-      letter-spacing: -0.02em;
-    }
+      #home.hero .hero-card {
+        background: transparent;
+        position: relative;
+        z-index: 1;
+        color: #fff;
+        max-width: 900px;
+        width: 100%;
+        text-align: center;
+        padding: 0;
+      }
 
-    .tagline {
-      margin-bottom: 18px;
-      color: var(--muted);
-    }
+      html,
+      body {
+        overflow-x: hidden;
+      }
 
-    .hero-actions {
-      display: flex;
-      gap: 12px;
-    }
+      .headline {
+        font-size: 34px;
+        margin: 0 0 12px;
+        font-weight: 800;
+        letter-spacing: -0.02em;
+      }
 
-    .btn {
-      padding: 10px 14px;
-      border-radius: 10px;
-      font-weight: 700;
-      text-decoration: none;
-      display: inline-block;
-    }
+      .tagline {
+        margin-bottom: 18px;
+        color: #ffffff;
+        font-size: 1.15rem;
+      }
 
-    .btn-primary {
-      background: var(--accent-blue);
-      color: white;
-    }
+      .hero-actions {
+        display: flex;
+        justify-content: center;
+        gap: 14px;
+        margin-top: 20px;
+      }
 
-    .btn-ghost {
-      background: transparent;
-      border: 1px solid rgba(15,23,42,0.06);
-      color: var(--accent-contrast);
-    }
+      .btn {
+        padding: 10px 14px;
+        border-radius: 10px;
+        font-weight: 700;
+        text-decoration: none;
+        display: inline-block;
+      }
 
-    section {
-      max-width: 1100px;
-      margin: 26px auto;
-      padding: 18px;
-    }
+      .btn-primary {
+        background: var(--accent-blue);
+        color: white;
+      }
 
-    .card {
-      background: var(--card);
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 8px 24px rgba(2,6,23,0.04);
-    }
+      .btn-ghost {
+        background: transparent;
+        border: 1px solid rgba(255, 255, 255, 0.6);
+        color: white;
+      }
 
-    .section-title {
-      margin: 0 0 12px;
-      font-size: 22px;
-      font-weight: 700;
-    }
-
-    .two-col {
-      display: grid;
-      grid-template-columns: 1fr 320px;
-      gap: 18px;
-    }
-
-    .muted {
-      color: var(--muted);
-    }
-
-    /* Team Section */
-    .team-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-      margin-top: 18px;
-    }
-
-    .team-card {
-      background: var(--card);
-      padding: 20px;
-      border-radius: 12px;
-      text-align: center;
-      box-shadow: 0 6px 16px rgba(2,6,23,0.04);
-    }
-
-    .team-photo {
-      width: 100%;
-      aspect-ratio: 1 / 1;
-      background: #e2e8f0;
-      border-radius: 10px;
-      margin-bottom: 10px;
-      object-fit: cover;
-    }
-
-    .team-name {
-      font-weight: 700;
-    }
-
-    .team-position {
-      font-size: 14px;
-      color: var(--muted);
-      margin-top: 4px;
-    }
-
-    .program-list {
-      list-style: none;
-      padding: 0;
-      margin-top: 12px;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
-    .program-item {
-      background: linear-gradient(180deg, #fff, #fbfdff);
-      padding: 12px;
-      border-radius: 10px;
-      border: 1px solid rgba(15,23,42,0.04);
-    }
-
-    .advocacy-list {
-      list-style: none;
-      padding: 0;
-      margin-top: 12px;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
-    .advocacy-item {
-      background: linear-gradient(180deg, #fff, #fbfdff);
-      padding: 12px;
-      border-radius: 10px;
-      border: 1px solid rgba(15,23,42,0.04);
-    }
-
-    .pill {
-      padding: 6px 10px;
-      border-radius: 999px;
-      font-size: 13px;
-      font-weight: 700;
-      background: rgba(22,163,74,0.08);
-      color: var(--accent-green);
-    }
-
-    footer {
-      margin-top: 34px;
-      padding: 24px 18px;
-      text-align: center;
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    @media (max-width: 900px) {
-      .hero {
-        flex-direction: column;
+      section {
+        max-width: 1100px;
+        margin: 26px auto;
         padding: 18px;
       }
+
+      .card {
+        background: var(--card);
+        padding: 20px;
+        border-radius: 12px;
+        box-shadow: 0 8px 24px rgba(2, 6, 23, 0.04);
+      }
+
+      .section-title {
+        margin: 0 0 12px;
+        font-size: 22px;
+        font-weight: 700;
+      }
+
       .two-col {
-        grid-template-columns: 1fr;
+        display: grid;
+        grid-template-columns: 1fr 320px;
+        gap: 18px;
       }
-      .nav-links {
-        display: none;
+
+      .muted {
+        color: var(--muted);
       }
+
       .team-grid {
-        grid-template-columns: 1fr;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+        margin-top: 18px;
       }
-    }
-  </style>
-</head>
 
-<body>
+      .team-card {
+        background: var(--card);
+        padding: 20px;
+        border-radius: 12px;
+        text-align: center;
+        box-shadow: 0 6px 16px rgba(2, 6, 23, 0.04);
+      }
 
-<header class="nav">
-  <a href="#home" class="brand">
-    <div class="logo">BK</div>
-    <div>
-      <strong>Bayan Ko, Linis Ko</strong>
-      <div style="font-size: 12px; color: var(--muted);">Hygiene & Sanitation Advocacy</div>
-    </div>
-  </a>
+      .team-photo {
+        width: 100%;
+        aspect-ratio: 1 / 1;
+        background: #e2e8f0;
+        border-radius: 10px;
+        margin-bottom: 10px;
+        object-fit: cover;
+      }
 
-  <nav class="nav-links">
-    <a href="#home">Home</a>
-    <a href="#about">About Us</a>
-    <a href="#team">Team</a>
-    <a href="#program">Program</a>
-    <a href="#advocacy">Advocacy</a>
-  </nav>
+      .team-name {
+        font-weight: 700;
+      }
 
-  <a class="cta" href="https://instagram.com" target="_blank" rel="noopener">Instagram</a>
-</header>
+      .team-position {
+        font-size: 14px;
+        color: var(--muted);
+        margin-top: 4px;
+      }
 
+      .program-list,
+      .advocacy-list,
+      .corevalues-list {
+        list-style: none;
+        padding: 0;
+        margin-top: 12px;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
 
-<main>
-  <section id="home" class="hero">
-    <div class="hero-card">
-      <h1 class="headline">
-        Clean <span style="color:#3b82f6;">Bathrooms</span>, Healthy <span style="color:#16a34a;">Communities</span>.
-      </h1>
-      <p class="tagline">We empower Malaya and Maparaan through hygiene education and the development of clean, functional bathrooms.</p>
-      <div class="hero-actions">
-        <a href="#program" class="btn btn-primary">Our Program</a>
-        <a href="#advocacy" class="btn btn-ghost">Our Advocacy</a>
-      </div>
-    </div>
-  </section>
+      .program-item,
+      .advocacy-item,
+      .corevalues-items {
+        background: #fff;
+        padding: 12px;
+        border-radius: 10px;
+        border: 1px solid rgba(15, 23, 42, 0.04);
+      }
 
+      .pill {
+        padding: 6px 10px;
+        border-radius: 999px;
+        font-size: 13px;
+        font-weight: 700;
+        background: rgba(22, 163, 74, 0.08);
+        color: var(--accent-green);
+      }
 
-  <section id="about">
-    <div class="card">
-      <h2 class="section-title">About Us</h2>
-      <div class="two-col">
+      footer {
+        margin-top: 34px;
+        padding: 24px 18px;
+        text-align: center;
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      @media (max-width: 900px) {
+        .hero {
+          flex-direction: column;
+          padding: 18px;
+        }
+
+        .two-col {
+          grid-template-columns: 1fr;
+        }
+
+        .nav-links {
+          display: none;
+        }
+
+        .team-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .video-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 18px;
+        margin-top: 18px;
+      }
+
+      .video-grid iframe {
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        border: 0;
+        border-radius: 10px;
+        background: #000;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="nav">
+      <a href="#home" class="brand">
+        <div class="logo">BK</div>
         <div>
-          <p class="muted"><strong>Who we are.</strong> A student-led advocacy from Claret School of Quezon City focused on improving bathroom sanitation in Malaya and Maparaan.</p>
-          <p class="muted"><strong>Vision.</strong> A community where everyone has access to safe and sanitary bathroom facilities.</p>
-          <p class="muted"><strong>Mission.</strong> Promote hygiene through education, partnerships, and improving bathroom facilities.</p>
+          <strong>Bayan Ko, Linis Ko</strong>
+          <div style="font-size: 12px; color: var(--muted);">Hygiene & Sanitation Advocacy</div>
         </div>
+      </a>
 
-        <div style="background:#eef2ff; padding:14px; border-radius:10px;">
-          <strong>Core Values</strong>
-          <ul style="margin:8px 0 0 14px; color:var(--muted);">
-            <li>Cleanliness</li>
-            <li>Compassion</li>
-            <li>Cooperation</li>
-            <li>Community Service</li>
+      <nav class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#about">About Us</a>
+        <a href="#team">Team</a>
+        <a href="#program">Program</a>
+        <a href="#advocacy">Advocacy</a>
+      </nav>
+
+      <a class="cta" href="https://instagram.com" target="_blank" rel="noopener">Instagram</a>
+    </header>
+
+    <main>
+      <section id="home" class="hero">
+        <div class="hero-card">
+          <h1 class="headline">
+            Clean <span style="color:#3b82f6;">Bathrooms</span>, Healthy
+            <span style="color:#4ade80;">Communities</span>.
+          </h1>
+
+          <p class="tagline">
+            We empower Malaya and Maparaan through hygiene education and the
+            development of clean, functional bathrooms.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#program" class="btn btn-primary">Our Program</a>
+            <a href="#advocacy" class="btn btn-ghost">Our Advocacy</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="about">
+        <div class="card">
+          <h2 class="section-title">About Us</h2>
+
+          <div class="two-col">
+            <ul class="corevalues-list">
+              <li class="corevalues-items">
+                <strong>Who we are</strong> A student-led advocacy from Claret
+                School of Quezon City focused on improving bathroom sanitation in
+                Malaya and Maparaan.
+              </li>
+
+              <li class="corevalues-items">
+                <strong>Vision</strong> A community where everyone has access to
+                safe and sanitary bathroom facilities.
+              </li>
+
+              <li class="corevalues-items">
+                <strong>Mission</strong> Promote hygiene through education,
+                partnerships, and improving bathroom facilities.
+              </li>
+            </ul>
+
+            <div style="background:#eef2ff; padding:14px; border-radius:10px;">
+              <strong>Core Values</strong>
+              <ul style="margin:8px 0 0 14px; color:var(--muted);">
+                <li>Cleanliness</li>
+                <li>Compassion</li>
+                <li>Cooperation</li>
+                <li>Community Service</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="team">
+        <div class="card">
+          <h2 class="section-title">Meet the Team</h2>
+
+          <div class="team-grid">
+            <div class="team-card">
+              <img src="Photos/meet-the-team/1.JPG" class="team-photo" alt="" />
+              <div class="team-name">Dwyane Catangui</div>
+              <div class="team-position">Leader</div>
+            </div>
+
+            <div class="team-card">
+              <img src="Photos/meet-the-team/2.jpg" class="team-photo" alt="" />
+              <div class="team-name">Stephen Reyes</div>
+              <div class="team-position">Vlog Point Person</div>
+            </div>
+
+            <div class="team-card">
+              <img src="Photos/meet-the-team/3.jpg" class="team-photo" alt="" />
+              <div class="team-name">Luigi Amorin</div>
+              <div class="team-position">Social Media Manager</div>
+            </div>
+
+            <div class="team-card">
+              <img src="Photos/meet-the-team/4.jpg" class="team-photo" alt="" />
+              <div class="team-name">Rafael Jarabata</div>
+              <div class="team-position">Podcast Crew</div>
+            </div>
+
+            <div class="team-card">
+              <img src="Photos/meet-the-team/5.jpg" class="team-photo" alt="" />
+              <div class="team-name">Mark Estrella</div>
+              <div class="team-position">Podcast Point Person</div>
+            </div>
+
+            <div class="team-card">
+              <img src="Photos/meet-the-team/6.jpg" class="team-photo" alt="" />
+              <div class="team-name">Alfonso Batungbacal</div>
+              <div class="team-position">Vlog Crew</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="program">
+        <div class="card">
+          <h2 class="section-title">The Program</h2>
+
+          <ul class="program-list">
+            <li class="program-item">
+              <strong>Goal</strong> Provide clean toilets and bathrooms for
+              families in Malaya and Maparaan, Quezon City.
+            </li>
+
+            <li class="program-item">
+              <strong>Fundraising Drive</strong> Garage sales, donation boxes,
+              and school fundraisers for cleaning and repair supplies.
+            </li>
+
+            <li class="program-item">
+              <strong>Social Media Campaign</strong> Spread awareness using
+              <span class="pill">#BayanKoLinisKo</span> and creative content.
+            </li>
+
+            <li class="program-item">
+              <strong>School & Community Activities</strong> Hygiene talks,
+              poster making, clean-up drives, and waste management workshops.
+            </li>
+
+            <li class="program-item">
+              <strong>Stakeholder Meetings</strong> Collaborate with LGU, DOH,
+              school boards, and NGOs.
+            </li>
+
+            <li class="program-item">
+              <strong>Implementation & Monitoring</strong> Improve bathrooms and
+              maintain sanitation with regular checks.
+            </li>
           </ul>
         </div>
-      </div>
-    </div>
-  </section>
+      </section>
 
+      <section id="advocacy">
+        <div class="card">
+          <h2 class="section-title">Advocacy</h2>
 
-  <section id="team">
-    <div class="card">
-      <h2 class="section-title">Meet the Team</h2>
-      <div class="team-grid">
-        <div class="team-card">
-          <img src="Photos/meet-the-team/1.JPG" class="team-photo" alt="">
-          <div class="team-name">Dwyane Catangui</div>
-          <div class="team-position">Leader & Website Designer</div>
+          <ul class="advocacy-list">
+            <li class="advocacy-item">
+              <strong>Core Message</strong> Clean and safe bathrooms are
+              essential to protect health and dignity. Every resident of Malaya
+              and Maparaan deserves a space where they feel safe, respected, and
+              cared for.
+            </li>
+
+            <li class="advocacy-item">
+              <strong>Why It Matters</strong> Families face higher risks of
+              infections and missed school days when sanitation is poor.
+              Improving bathroom conditions means preventing disease, boosting
+              confidence, and creating a healthier foundation for the next
+              generation.
+            </li>
+
+            <li class="advocacy-item">
+              <strong>Our Commitment</strong> We raise awareness about the
+              importance of good hygiene and responsible bathroom use. We
+              believe that when a community values cleanliness, everyone
+              benefits from a safer and more dignified environment.
+            </li>
+          </ul>
+
+          <p class="muted" style="margin-top:14px;">
+            The heart of Bayan Ko, Linis Ko is simple. Respect people. Protect
+            health. Build dignity through clean spaces. When our bathrooms are
+            cared for, our community is cared for too.</p>
+
+          <div class="video-grid" style="margin-top:20px;">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/M3vGHgv3cVo?si=jauDk69zCHGYIqwD" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/EXOmBkEI0Io?si=1RLZW0o3uXvVYnyq" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
         </div>
-        <div class="team-card">
-          <img src="Photos/meet-the-team/2.jpg" class="team-photo" alt="">
-          <div class="team-name">Stephen Reyes</div>
-          <div class="team-position">Vlog Point Person</div>
-        </div>
-        <div class="team-card">
-          <img src="Photos/meet-the-team/3.jpg" class="team-photo" alt="">
-          <div class="team-name">Luigi Amorin</div>
-          <div class="team-position">Social Media Manager</div>
-        </div>
-        <div class="team-card">
-          <img src="Photos/meet-the-team/4.jpg" class="team-photo" alt="">
-          <div class="team-name">Rafael Jarabata</div>
-          <div class="team-position">Podcast Crew</div>
-        </div>
-        <div class="team-card">
-          <img src="Photos/meet-the-team/5.jpg" class="team-photo" alt="">
-          <div class="team-name">Mark Estrella</div>
-          <div class="team-position">Podcast Point Person</div>
-        </div>
-        <div class="team-card">
-          <img src="Photos/meet-the-team/6.jpg" class="team-photo" alt="">
-          <div class="team-name">Alfonso Batungbacal</div>
-          <div class="team-position">Vlog Crew</div>
-        </div>
-      </div>
-    </div>
-  </section>
+      </section>
 
-
-  <section id="program">
-    <div class="card">
-      <h2 class="section-title">The Program</h2>
-
-      <ul class="program-list">
-        <li class="program-item"><strong>Goal</strong> Provide clean toilets and bathrooms for families in Malaya and Maparaan, Quezon City.</li>
-        <li class="program-item"><strong>Fundraising Drive</strong> Garage sales, donation boxes, and school fundraisers for cleaning and repair supplies.</li>
-        <li class="program-item"><strong>Social Media Campaign</strong> Spread awareness using <span class="pill">#BayanKoLinisKo</span> and creative content.</li>
-        <li class="program-item"><strong>School & Community Activities</strong> Hygiene talks, poster making, clean-up drives, and waste management workshops.</li>
-        <li class="program-item"><strong>Stakeholder Meetings</strong> Collaborate with LGU, DOH, school boards, and NGOs.</li>
-        <li class="program-item"><strong>Implementation & Monitoring</strong> Improve bathrooms and maintain sanitation with regular checks.</li>
-      </ul>
-    </div>
-  </section>
-
-
-<section id="advocacy">
-  <div class="card">
-    <h2 class="section-title">Advocacy</h2>
-
-    <ul class="advocacy-list">
-      <li class="advocacy-item"><strong>Core Message</strong> Clean and safe bathrooms are essential to protect health and dignity. Every resident of Malaya and Maparaan deserves a space where they feel safe, respected, and cared for.</li>
-      <li class="advocacy-item"><strong>Why It Matters</strong> Families face higher risks of infections and missed school days when sanitation is poor. Improving bathroom conditions means preventing disease, boosting confidence, and creating a healthier foundation for the next generation.</li>
-      <li class="advocacy-item"><strong>Our Commitment</strong> We raise awareness about the importance of good hygiene and responsible bathroom use. We believe that when a community values cleanliness, everyone benefits from a safer and more dignified environment.</li>
-    </ul>
-
-    <p class="muted" style="margin-top:14px;">
-      The heart of Bayan Ko, Linis Ko is simple. Respect people. Protect health. Build dignity through clean spaces. When our bathrooms are cared for, our community is cared for too.
-    </p>
-  </div>
-</section>
-
-
-<footer>© 2025 Bayan Ko, Linis Ko</footer>
-
-</body>
+      <footer>© 2025 Bayan Ko, Linis Ko</footer>
+    </main>
+  </body>
 </html>
-
-
